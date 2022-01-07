@@ -6,9 +6,6 @@ elixir:
 otp_release:
   - '24.1'
 
-addons:
-  postgresql: '14'
-
 env:
   - MIX_ENV=test
 

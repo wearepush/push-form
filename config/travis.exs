@@ -8,8 +8,9 @@ config :form, FormWeb.Endpoint,
 
 # Configure your database
 config :form, Form.Repo,
+  adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "",
+  password: "postgres",
   database: "form_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
