@@ -31,8 +31,7 @@ config :logger, level: :info
 #       ]
 
 config :form, FormWeb.Endpoint,
-  url: [scheme: "https", host: System.get_env("HOST"), port: 443],
-  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  url: [scheme: "https", host: System.get_env("HOST"), port: 443]
 
 #
 # The `cipher_suite` is set to `:strong` to support only the
@@ -50,5 +49,7 @@ config :form, FormWeb.Endpoint,
 #
 #     config :form, FormWeb.Endpoint,
 #       force_ssl: [hsts: true]
+config :form, FormWeb.Endpoint,
+  force_ssl: [rewrite_on: [:x_forwarded_proto]]
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.
