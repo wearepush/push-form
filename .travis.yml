@@ -4,13 +4,10 @@ elixir:
   - '1.13.1'
 
 otp_release:
-  - '24.1'
+  - '24.2'
 
 env:
   - MIX_ENV=test
-
-addons:
-  postgresql: '14'
 
 services:
   - postgresql
