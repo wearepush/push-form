@@ -8,5 +8,5 @@ services:
 env:
   - MIX_ENV=test
 before_script:
-  - cp config/travis_ci_test.exs config/test.secret.exs
+  - cp config/travis_ci_test.exs
   - mix do ecto.create, ecto.migrate

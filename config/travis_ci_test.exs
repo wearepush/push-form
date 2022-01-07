@@ -1,7 +1,7 @@
 use Mix.Config
 
 # Configure your database
-config :agile_pulse, Form.Repo,
+config :form, Form.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "",
