@@ -3,3 +3,10 @@ elixir:
   - '1.13.1'
 otp_release:
   - '24.1'
+services:
+  - postgresql
+env:
+  - MIX_ENV=test
+before_script:
+  - cp config/travis_ci_test.exs config/test.secret.exs
+  - mix do ecto.create, ecto.migrate
