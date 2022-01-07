@@ -6,9 +6,6 @@ config :form, FormWeb.Endpoint,
   http: [port: 4002],
   server: false
 
-# Print only warnings and errors during test
-config :logger, level: :warn
-
 # Configure your database
 config :form, Form.Repo,
   username: "postgres",
@@ -16,3 +13,12 @@ config :form, Form.Repo,
   database: "form_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# In test we don't send emails.
+config :form, Form.Mailer, adapter: Swoosh.Adapters.Test
+
+# Print only warnings and errors during test
+config :logger, level: :warn
+
+# Initialize plugs at runtime for faster test compilation
+config :phoenix, :plug_init_mode, :runtime
