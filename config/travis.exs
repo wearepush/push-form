@@ -4,6 +4,7 @@ use Mix.Config
 # you can enable the server option below.
 config :form, Form.Endpoint,
   http: [port: 4001],
+  secret_key_base: "FQFcpK3/SPOwvofMHdG2jbScpKOTzgQfruTiHviuv57UyXX0gS8d6Aw9fVdSW7iF",
   server: false
 
 # Print only warnings and errors during test
