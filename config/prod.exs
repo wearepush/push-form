@@ -53,3 +53,14 @@ config :form, FormWeb.Endpoint,
   force_ssl: [rewrite_on: [:x_forwarded_proto]]
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.
+
+# Email provider
+sendgrid_api_key =
+  System.get_env("SENDGRID_API_KEY") ||
+    raise """
+    environment variable SENDGRID_API_KEY is missing.
+    """
+
+config :form, FormWeb.Pow.Mailer,
+  adapter: Swoosh.Adapters.Sendgrid,
+  api_key: sendgrid_api_key
