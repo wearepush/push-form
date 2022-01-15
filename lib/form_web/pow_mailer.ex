@@ -22,13 +22,15 @@ defmodule FormWeb.Pow.Mailer do
   def process(email) do
     Logger.debug("E-mail sent: #{inspect(email)}")
 
-    Task.start(fn ->
-      email
-      |> deliver()
-      |> log_warnings()
-    end)
+    if Mix.env() == :prod do
+      Task.start(fn ->
+        email
+        |> deliver()
+        |> log_warnings()
+      end)
 
-    :ok
+      :ok
+    end
   end
 
   defp log_warnings({:error, reason}) do
